@@ -1,0 +1,12 @@
+# You can remove this action file if you dont want to add github actions to your repo
+
+name: Test_Action_Name ## Replace it with your own action name
+on: push
+jobs:
+  job1:
+    name: Job 1 here ## Add your jobs steps here
+    runs-on: ubuntu-latest 
+    steps:
+      - name: define job steps
+        run: |
+          echo Job1 done
