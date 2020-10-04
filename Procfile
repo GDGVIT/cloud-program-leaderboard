@@ -1,3 +1,2 @@
 web: gunicorn backend.wsgi
-worker: celery -A backend worker -l info
-beat: celery -A backend beat -l INFO
+worker: python manage.py celery -A backend worker --loglevel=info --beat
