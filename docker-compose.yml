@@ -1,0 +1,45 @@
+
+version: "3.7"
+
+services:
+  backend:
+    container_name: backend
+    image: raysandeep/dscvit30daysofgcp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/app
+    env_file: .env
+    depends_on:
+      - redis
+    networks:
+      - internal
+      - web
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - internal
+
+  celery:
+    build: .
+    command: celery -A backend worker --loglevel=info --beat
+    env_file: .env
+    depends_on:
+      - redis
+    networks:
+      - internal
+
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
