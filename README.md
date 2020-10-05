@@ -12,6 +12,7 @@
 ## Functionalities
 - [x]  Scrape Public Profiles within seconds
 - [x]  Cron Job to update DB
+- [x]  Docker Support
 
 <br>
 
