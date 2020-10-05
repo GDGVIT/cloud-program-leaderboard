@@ -18,7 +18,7 @@
 
 ## Instructions to run
 
-
+#### Deploy on Heroku
 * Fork the repo https://github.com/gdgvit/cloud-program-leaderboard
 * Clone the forked repo on to your local machine
 * Edit USERS_URLS in ```backend/settings.py``` file with your DSC's Public Profiles.
@@ -33,6 +33,26 @@ SECRET_KEY: 20_digit_alphanumerical_key
 * Now move to ```Deploy``` Tab. And click on deploy with ```Github``` and choose your repo and click on deploy.
 * Once done, click on ```Run Console``` which is located inside ```More``` Tab and type the following command <br>```python manage.py migrate```
 * Yaay! Your'e done. Click on ```open app```.
+
+#### Deploy on VM
+* Fork the repo https://github.com/gdgvit/cloud-program-leaderboard
+* Clone the forked repo on to your local machine
+* Edit USERS_URLS in ```backend/settings.py``` file with your DSC's Public Profiles.
+* Push the code on to your github.
+* Run the following commands and replace your secret key
+```
+cp example.env .env
+nano .env
+```
+* Install <a href = "https://docs.docker.com/engine/install/">Docker </a>and <a href = "https://docs.docker.com/compose/install/">Docker-Compose</a> in your VM.
+* Run the following commands
+```
+sudo docker-compose build
+sudo docker network create web
+sudo docker network create internal
+sudo docker-compose compose up -d
+```
+* Yaay! Your'e done. Go to your Public IP Address.
 
 ## Contributors
 

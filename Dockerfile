@@ -15,4 +15,6 @@ COPY . .
 
 CMD python manage.py collectstatic
 
+CMD python manage.py migrate
+
 CMD python manage.py runserver 0.0.0.0:80
