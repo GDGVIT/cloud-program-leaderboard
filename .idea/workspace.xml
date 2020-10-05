@@ -10,7 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ff988ff-8579-4284-9d3a-7fa910c35f19" name="Default Changelist" comment="" />
+    <list default="true" id="2ff988ff-8579-4284-9d3a-7fa910c35f19" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +30,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -65,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601838435839</updated>
-      <workItem from="1601838437405" duration="1523000" />
+      <workItem from="1601838437405" duration="3821000" />
     </task>
     <servers />
   </component>
@@ -84,6 +91,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="128" y="286" key="#SQL_Dialects" timestamp="1601888811960">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="128" y="286" key="#SQL_Dialects/0.0.1440.900@0.0.1440.900" timestamp="1601888811960" />
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601888817468">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1601888817468" />
     <state x="508" y="212" key="FileChooserDialogImpl" timestamp="1601838504822">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

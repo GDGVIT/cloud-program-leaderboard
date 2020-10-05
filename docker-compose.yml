@@ -1,0 +1,71 @@
+
+version: "3.7"
+
+services:
+  backend:
+    container_name: backend
+    image: raysandeep/dscvit30daysofgcp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/app
+    env_file: .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - internal
+      - web
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - internal
+
+  celery:
+    build: .
+    command: celery -A backend worker --loglevel=info --beat
+    env_file: .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - internal
+
+  db:
+    container_name: db
+    image: postgres:10.4
+    ports:
+      - 5432:5432
+    env_file: .env
+    networks:
+      - internal
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DATABASE: "defaultdb"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./dbdata:/var/lib/postgresql/data
+
+
+
+volumes:
+  postgres_data:
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
