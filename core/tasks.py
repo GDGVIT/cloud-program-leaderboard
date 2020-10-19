@@ -27,10 +27,13 @@ def GetCountAndResourcesDone(URL):
     r = requests.get(URL) 
     soup = BeautifulSoup(r.content, 'html5lib')
     quests = soup.findAll('div', attrs = {'class':'public-profile__badges'})   
-    for row in quests[0].findAll('div', attrs = {'class':'public-profile__badge'}): 
-        divs = row.findChildren("div" , recursive=False)
-        if divs[1].text.strip() in CHALLENGES_AVAILABLE:
-            COMPLETED_QUESTS.append(divs[1].text.strip())
+    for row in quests[0].findAll('ql-badge'):
+        var = str(row)
+        str_dict = var[var.find('{'): var.find('}') + 1]
+        dict_ = json.loads(str_dict)
+
+        if dict_['title'] in CHALLENGES_AVAILABLE:
+            COMPLETED_QUESTS.append(dict_['title'])
     profile = soup.findAll('div', attrs = {'class':'public-profile__hero'})[0]
     dp = profile.img['src']
     name = profile.h1.text
